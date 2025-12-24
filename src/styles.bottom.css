@@ -1,0 +1,120 @@
+/* ============================================================
+   YASB Style Sheet - Force Black Text
+   ============================================================ */
+
+/* 1. バー全体の基本設定 */
+.yasb-bar {
+    background-color: #333333 !important;
+    border-top: 1px solid #4d4d4d !important;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+}
+
+/* 2. ウィジェット共通設定（まずは基本を黒にする） */
+.widget {
+    padding: 2px 12px;
+    margin: 4px 3px;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    /* 太字を強制 */
+}
+
+/* ============================================================
+   【例外】左側: Komorebi と ウィンドウ名 (白文字)
+   ============================================================ */
+
+/* ワークスペース (1 2 3...) */
+.workspace-widget {
+    background-color: #4d4d4d !important;
+    color: #ffffff !important;
+    /* 白文字を強制 */
+}
+
+/* ワークスペース内のボタンすべて */
+.workspace-widget * {
+    color: #ffffff !important;
+}
+
+/* 選択中のワークスペース（ここは明るいので黒文字） */
+.workspace-widget .active {
+    background-color: #cba6f7 !important;
+    color: #000000 !important;
+    /* 黒文字を強制 */
+}
+
+.workspace-widget .active * {
+    color: #000000 !important;
+}
+
+/* アクティブウィンドウ名（暗い背景なので白文字） */
+.active-window-widget {
+    background-color: #4d4d4d !important;
+    color: #ffffff !important;
+}
+
+/* ============================================================
+   【メイン】その他すべてのウィジェット (真っ黒 #000000 に強制)
+   ============================================================ */
+
+/* 以下のウィジェットクラスに対して、
+   文字色を #000000 !important で強制します。
+*/
+
+.clock-widget,
+.cpu-widget,
+.memory-widget,
+.wifi-widget,
+.explorer-widget,
+.traffic-widget,
+.weather-widget,
+.active-layout-widget {
+    color: #000000 !important;
+}
+
+/* 念のため、ウィジェット内部のspanタグなど子要素もすべて黒にする */
+.clock-widget *,
+.cpu-widget *,
+.memory-widget *,
+.wifi-widget *,
+.explorer-widget *,
+.traffic-widget *,
+.weather-widget *,
+.active-layout-widget * {
+    color: #000000 !important;
+}
+
+/* 各ウィジェットの背景色設定 */
+
+.active-layout-widget {
+    background-color: #fab387 !important;
+}
+
+.clock-widget {
+    background-color: #89b4fa !important;
+}
+
+.explorer-widget {
+    background-color: #f5c2e7 !important;
+}
+
+.wifi-widget {
+    background-color: #f9e2af !important;
+}
+
+.cpu-widget {
+    background-color: #a6e3a1 !important;
+}
+
+.memory-widget {
+    background-color: #94e2d5 !important;
+}
+
+.weather-widget {
+    background-color: #89dceb !important;
+}
+
+/* styles.css 内のこの部分が適用されます */
+.wifi-widget {
+    background-color: #f9e2af !important;
+    /* ...他、黒文字設定など */
+}

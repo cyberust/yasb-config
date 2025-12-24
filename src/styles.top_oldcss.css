@@ -1,0 +1,141 @@
+/* ============================================================
+   YASB Style Sheet - Modern Dark Theme (Fixed)
+   ============================================================ */
+
+/* 1. バー全体 - 紫ダークテーマ */
+.yasb-bar {
+    background-color: #1e1e2e !important;
+    border-bottom: 2px solid #6B1AA0 !important;
+    font-family: "Segoe UI", "Cascadia Code", monospace;
+    font-size: 13px;
+}
+
+/* 2. ウィジェット共通 */
+.widget {
+    padding: 4px 14px;
+    margin: 4px 4px;
+    border-radius: 6px;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    /* 透明度問題を防止 */
+}
+
+/* ============================================================
+   左側: Komorebi Workspaces
+   ============================================================ */
+
+.workspace-widget {
+    background-color: #2d2d44 !important;
+    color: #cdd6f4 !important;
+}
+
+.workspace-widget * {
+    color: #cdd6f4 !important;
+}
+
+.workspace-widget .active {
+    background-color: #6B1AA0 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.workspace-widget .active * {
+    color: #ffffff !important;
+}
+
+/* 修正箇所: レイアウトアイコン
+   白背景(#ffffff) に 紫文字(#6B1AA0) を確実に適用
+*/
+.active-layout-widget {
+    background-color: #ffffff !important;
+    color: #6B1AA0 !important;
+    border: 2px solid #6B1AA0 !important;
+}
+
+.active-layout-widget * {
+    color: #6B1AA0 !important;
+    /* アイコンを紫に設定 */
+}
+
+/* アクティブウィンドウ名 */
+.active-window-widget {
+    background-color: #2d2d44 !important;
+    color: #cdd6f4 !important;
+}
+
+.active-window-widget * {
+    color: #cdd6f4 !important;
+}
+
+/* ============================================================
+   中央: Clock
+   ============================================================ */
+
+.clock-widget {
+    background-color: #6B1AA0 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 14px;
+}
+
+.clock-widget * {
+    color: #ffffff !important;
+}
+
+/* ============================================================
+   右側: System Info
+   ============================================================ */
+
+.explorer-widget {
+    background-color: #9B30FF !important;
+    color: #ffffff !important;
+}
+
+.explorer-widget * {
+    color: #ffffff !important;
+}
+
+.cpu-widget {
+    background-color: #7B68EE !important;
+    color: #ffffff !important;
+}
+
+.cpu-widget * {
+    color: #ffffff !important;
+}
+
+.memory-widget {
+    background-color: #8B7AB8 !important;
+    color: #ffffff !important;
+}
+
+.memory-widget * {
+    color: #ffffff !important;
+}
+
+.wifi-widget {
+    background-color: #6B5B95 !important;
+    color: #ffffff !important;
+}
+
+.wifi-widget * {
+    color: #ffffff !important;
+}
+
+.traffic-widget {
+    background-color: #5B4B85 !important;
+    color: #ffffff !important;
+}
+
+.traffic-widget * {
+    color: #ffffff !important;
+}
+
+.weather-widget {
+    background-color: #4B3B75 !important;
+    color: #ffffff !important;
+}
+
+.weather-widget * {
+    color: #ffffff !important;
+}

@@ -10,12 +10,12 @@ bars:
       position: "top"
       center: false
     blur_effect:
-      enabled: true
-      acrylic: true
-      dark: false
+      enabled: false
+      acrylic: false
+      dark: true
     window_flags:
       always_on_top: true
-      windows_app_bar: true # これが重要
+      windows_app_bar: true
     dimensions:
       width: "100%"
       height: 35
@@ -24,7 +24,6 @@ bars:
       left: 0
       bottom: 0
       right: 0
-    # work_area_offset は削除（サポート外）
     widgets:
       left: ["komorebi_workspaces", "komorebi_active_layout", "active_window"]
       center: ["clock"]
@@ -40,8 +39,6 @@ widgets:
       max_length: 60
       max_length_ellipsis: "..."
       monitor_exclusive: false
-      # エラーの原因となっていた class_name 行を削除しました。
-      # 自動的に .active-window-widget クラスが適用されるため、CSSはそのまま機能します。
 
   clock:
     type: "yasb.clock.ClockWidget"
