@@ -7,16 +7,15 @@ bars:
     screens: ["*"]
     class_name: "yasb-bar"
     alignment:
-      position: "bottom"
+      position: "top"
       center: false
     blur_effect:
-      enabled: false
-      acrylic: false
+      enabled: true
+      acrylic: true
       dark: false
     window_flags:
       always_on_top: true
-      # ウィンドウがバーの下に潜り込まないようにする設定
-      windows_app_bar: true
+      windows_app_bar: true # これが重要
     dimensions:
       width: "100%"
       height: 35
@@ -25,6 +24,7 @@ bars:
       left: 0
       bottom: 0
       right: 0
+    # work_area_offset は削除（サポート外）
     widgets:
       left: ["komorebi_workspaces", "komorebi_active_layout", "active_window"]
       center: ["clock"]
