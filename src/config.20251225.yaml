@@ -27,7 +27,7 @@ bars:
     widgets:
       left: ["komorebi_workspaces", "komorebi_active_layout", "active_window"]
       center: ["clock"]
-      right: ["traffic", "ip_info", "explorer_button", "cpu", "memory"]
+      right: ["explorer_button", "cpu", "memory"]
 
 widgets:
   active_window:
@@ -122,9 +122,9 @@ widgets:
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
-      label: "DL: {download_speed} | UL: {upload_speed}"
+      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
       label_alt: "\ueb01 \ueab4 {upload_speed} | \ueab7 {download_speed}"
-      update_interval: 5000
+      update_interval: 1000
       callbacks:
         on_right: "exec cmd /c Taskmgr"
 
