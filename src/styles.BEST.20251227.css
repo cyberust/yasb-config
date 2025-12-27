@@ -4,7 +4,6 @@
    ・komorebiレイアウトアイコンの二重枠を解消
    ・ウィンドウタイトルの視認性を最大化
    ・全体の明度・階調を統一
-   ・全ウィジェット背景色を #387822 に統一
    ============================================================ */
 
 /* 1. Global Bar Settings */
@@ -33,7 +32,7 @@
 
 /* Workspaces */
 .workspace-widget {
-    background-color: #387822 !important;
+    background-color: #45475a;
     padding: 0px 4px;
 }
 
@@ -46,16 +45,15 @@
 }
 
 .workspace-widget button.active {
-    background-color: #387822 !important;
-    color: #ffffff;
-    font-weight: bold;
+    background-color: #cba6f7;
+    color: #1e1e2e;
     font-weight: bold;
 }
 
 /* Active Window Title */
 .active-window-widget {
-    background-color: #387822 !important;
-    /* 背景を塗りつぶし(右側と統一) */
+    background-color: #45475a;
+    /* 背景を塗りつぶし（テーマに合う暗めの色で視認性向上） */
     color: #f5e0dc;
     border: 1px solid #b4befe;
     font-weight: 700;
@@ -66,7 +64,7 @@
 
 /* Layout Icon (komorebi_active_layout) */
 .komorebi-active-layout {
-    background-color: #0cbc3b;
+    background-color: #b4befe;
     /* Lavender */
     color: #000000;
     /* 黒文字で可視（元の#ceceedは明るすぎる可能性があるため修正例） */
@@ -85,17 +83,11 @@
 }
 
 /* ============================================================
-   Center: Clock - 最強の優先度で上書き
+   Center: Clock
    ============================================================ */
-.yasb-bar .clock-widget,
-.yasb-bar .clock-widget * {
-    color: #ffffff !important;
-    font-size: 18px !important;
-    background-color: transparent !important;
-    /* 完全透過 */
-    /* または */
-    background-color: rgba(56, 120, 34, 0.7) !important;
-    /* 半透明(70%不透明) */
+.clock-widget {
+    background-color: #e6f3e7;
+    color: #1e1e2e;
 }
 
 /* ============================================================
@@ -124,31 +116,6 @@
 .traffic-widget *,
 .explorer-widget * {
     color: #ffffff !important;
-}
-
-/* 枠線のみアクセント色で個性を保持 */
-.weather-widget {
-    border-color: #94e2d5;
-}
-
-.ip-info-widget {
-    border-color: #f9e2af;
-}
-
-.cpu-widget {
-    border-color: #a6e3a1;
-}
-
-.memory-widget {
-    border-color: #89b4fa;
-}
-
-.traffic-widget {
-    border-color: #f5c2e7;
-}
-
-.explorer-widget {
-    border-color: #89dceb;
 }
 
 /* ============================================================
@@ -192,16 +159,6 @@
 /* hover時：微発光 */
 .active-window-widget:hover {
     filter: brightness(1.15);
-    border-color: #cdf7a6 !important;
+    border-color: #cba6f7 !important;
     /* Mauve系で軽く強調 */
-}
-
-/* 診断用 */
-* {
-    outline: 1px solid red !important;
-}
-
-.clock-widget,
-.clock {
-    outline: 3px solid yellow !important;
 }

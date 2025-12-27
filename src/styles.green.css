@@ -4,15 +4,13 @@
    ・komorebiレイアウトアイコンの二重枠を解消
    ・ウィンドウタイトルの視認性を最大化
    ・全体の明度・階調を統一
-   ・全ウィジェット背景色を #387822 に統一
    ============================================================ */
 
 /* 1. Global Bar Settings */
 .yasb-bar {
-    background-color: transparent !important;
-    /* 背景色を透明に */
-    border-bottom: none !important;
-    /* 下線も消す */
+    background-color: #43761e !important;
+    /* Mochaベースを約25%明るく */
+    border-bottom: 2px solid #cba6f7 !important;
     font-family: "Segoe UI", "Cascadia Code", monospace;
     font-size: 13px;
     color: #cdd6f4 !important;
@@ -33,7 +31,7 @@
 
 /* Workspaces */
 .workspace-widget {
-    background-color: #387822 !important;
+    background-color: #45475a;
     padding: 0px 4px;
 }
 
@@ -46,16 +44,14 @@
 }
 
 .workspace-widget button.active {
-    background-color: #387822 !important;
-    color: #ffffff;
-    font-weight: bold;
+    background-color: #cba6f7;
+    color: #1e1e2e;
     font-weight: bold;
 }
 
 /* Active Window Title */
 .active-window-widget {
-    background-color: #387822 !important;
-    /* 背景を塗りつぶし(右側と統一) */
+    background-color: transparent;
     color: #f5e0dc;
     border: 1px solid #b4befe;
     font-weight: 700;
@@ -65,12 +61,12 @@
 }
 
 /* Layout Icon (komorebi_active_layout) */
-.komorebi-active-layout {
-    background-color: #0cbc3b;
+#komorebi_active_layout {
+    background-color: #b4befe;
     /* Lavender */
-    color: #000000;
-    /* 黒文字で可視（元の#ceceedは明るすぎる可能性があるため修正例） */
-    border: 1px solid #ebedfb;
+    color: #1e1e2e;
+    /* 黒文字で可視 */
+    border: 1px solid #b4befe;
     /* 外枠1本のみ */
     border-radius: 6px;
     padding: 0px 8px;
@@ -85,17 +81,11 @@
 }
 
 /* ============================================================
-   Center: Clock - 最強の優先度で上書き
+   Center: Clock
    ============================================================ */
-.yasb-bar .clock-widget,
-.yasb-bar .clock-widget * {
-    color: #ffffff !important;
-    font-size: 18px !important;
-    background-color: transparent !important;
-    /* 完全透過 */
-    /* または */
-    background-color: rgba(56, 120, 34, 0.7) !important;
-    /* 半透明(70%不透明) */
+.clock-widget {
+    background-color: #d5f4b8;
+    color: #1e1e2e;
 }
 
 /* ============================================================
@@ -108,22 +98,12 @@
 .memory-widget,
 .traffic-widget,
 .explorer-widget {
-    background-color: #387822 !important;
+    background-color: #e6e0ef;
     /* 淡いトーンで全体調和 */
-    color: #ffffff !important;
+    color: #1e1e2e;
     border-radius: 4px;
     padding: 0px 8px;
     border: 1px solid #b4befe;
-}
-
-/* 右側ウィジェットの子要素すべて白色化 */
-.weather-widget *,
-.ip-info-widget *,
-.cpu-widget *,
-.memory-widget *,
-.traffic-widget *,
-.explorer-widget * {
-    color: #ffffff !important;
 }
 
 /* 枠線のみアクセント色で個性を保持 */
@@ -172,12 +152,11 @@
 
 .active-window-widget,
 .active-window-widget * {
-    background-color: #387822 !important;
-    /* 塗りつぶしをここでも適用（一貫性確保） */
+    background-color: transparent !important;
     color: #ffffff !important;
     /* Rosewater tone for visibility */
     font-weight: 700 !important;
-    text-shadow: 0 0 6px rgba(235, 228, 228, 0.6);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
     border: 1px solid #b4befe !important;
     /* 外枠: Lavender */
     /* 子要素側の枠を削除して二重化防止 */
@@ -192,16 +171,6 @@
 /* hover時：微発光 */
 .active-window-widget:hover {
     filter: brightness(1.15);
-    border-color: #cdf7a6 !important;
+    border-color: #cba6f7 !important;
     /* Mauve系で軽く強調 */
-}
-
-/* 診断用 */
-* {
-    outline: 1px solid red !important;
-}
-
-.clock-widget,
-.clock {
-    outline: 3px solid yellow !important;
 }
