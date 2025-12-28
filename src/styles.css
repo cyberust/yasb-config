@@ -1,34 +1,54 @@
 /* ============================================================
-   YASB Theme: Catppuccin Mocha – Brightened Unified Edition
+   YASB Theme: Catppuccin Mocha – Brightened Unified Edition (Fixed)
    ------------------------------------------------------------
-   ・komorebiレイアウトアイコンの二重枠を解消
-   ・ウィンドウタイトルの視認性を最大化
-   ・全体の明度・階調を統一
+   ・Windowsダークモード時の文字色黒化を防止 (!important追加)
+   ・デバッグ用アウトラインの削除
    ・全ウィジェット背景色を #387822 に統一
    ============================================================ */
 
-/* 1. Global Bar Settings */
+/* ============================================================
+   1. Global Bar Settings (高さを30pxに固定)
+   ============================================================ */
 .yasb-bar {
+    height: 30px !important;
+    /* 【重要】高さを30pxに固定 */
+    box-sizing: border-box;
+    /* パディングを含めたサイズ計算にする */
     background-color: transparent !important;
-    /* 背景色を透明に */
     border-bottom: none !important;
-    /* 下線も消す */
     font-family: "Segoe UI", "Cascadia Code", monospace;
     font-size: 13px;
     color: #cdd6f4 !important;
-}
-
-/* 2. Common Widget Settings */
-.widget {
-    padding: 2px 12px;
-    margin: 4px 3px;
-    border-radius: 6px;
-    font-weight: 600;
-    color: #cdd6f4;
+    /* フレックスボックスで垂直方向の中央揃えを強制 */
+    display: flex;
+    align-items: center;
 }
 
 /* ============================================================
-   Left Side: Komorebi
+   2. Common Widget Settings (マージンによる隙間を排除)
+   ============================================================ */
+.widget {
+    /* 上下のマージンを削除し、左右のみ3px残す */
+    margin: 0 3px;
+
+    /* 高さ30pxのバーに対して、少し小さくして浮遊感を出すなら以下 */
+    /* 完全に埋めたい場合は padding: 4px 12px; などに調整 */
+    padding: 3px 12px;
+
+    border-radius: 6px;
+    font-weight: 600;
+    color: #cdd6f4;
+
+    /* アイコンや文字の垂直位置を安定させる */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    /* ウィジェット自体の高さを明示(バー30px - 上下余白) */
+}
+
+/* ============================================================
+   Left Side: Komorebi (修正箇所)
    ============================================================ */
 
 /* Workspaces */
@@ -37,8 +57,12 @@
     padding: 0px 4px;
 }
 
+/* 【修正】colorに !important を付与し、
+   OSがダークモードでも文字色を強制的に明るく維持します
+*/
 .workspace-widget button {
-    color: #cdd6f4;
+    color: #ffffff !important;
+    /* ここを修正: 強制的に白 */
     background-color: transparent;
     border: none;
     padding: 2px 6px;
@@ -47,16 +71,15 @@
 
 .workspace-widget button.active {
     background-color: #387822 !important;
-    color: #ffffff;
-    font-weight: bold;
+    color: #ffffff !important;
+    /* ここも念のため !important */
     font-weight: bold;
 }
 
 /* Active Window Title */
 .active-window-widget {
     background-color: #387822 !important;
-    /* 背景を塗りつぶし(右側と統一) */
-    color: #f5e0dc;
+    color: #ffffff !important;
     border: 1px solid #b4befe;
     font-weight: 700;
     padding: 0 8px;
@@ -66,12 +89,10 @@
 
 /* Layout Icon (komorebi_active_layout) */
 .komorebi-active-layout {
-    background-color: #0cbc3b;
-    /* Lavender */
-    color: #000000;
-    /* 黒文字で可視（元の#ceceedは明るすぎる可能性があるため修正例） */
+    background-color: #387822;
+    color: #000000 !important;
+    /* 黒文字を強制 */
     border: 1px solid #ebedfb;
-    /* 外枠1本のみ */
     border-radius: 6px;
     padding: 0px 8px;
 }
@@ -85,17 +106,15 @@
 }
 
 /* ============================================================
-   Center: Clock - 最強の優先度で上書き
+   Center: Clock
    ============================================================ */
 .yasb-bar .clock-widget,
 .yasb-bar .clock-widget * {
     color: #ffffff !important;
     font-size: 18px !important;
     background-color: transparent !important;
-    /* 完全透過 */
-    /* または */
+    /* 透過または半透明設定 */
     background-color: rgba(56, 120, 34, 0.7) !important;
-    /* 半透明(70%不透明) */
 }
 
 /* ============================================================
@@ -109,7 +128,6 @@
 .traffic-widget,
 .explorer-widget {
     background-color: #387822 !important;
-    /* 淡いトーンで全体調和 */
     color: #ffffff !important;
     border-radius: 4px;
     padding: 0px 8px;
@@ -173,17 +191,13 @@
 .active-window-widget,
 .active-window-widget * {
     background-color: #387822 !important;
-    /* 塗りつぶしをここでも適用（一貫性確保） */
     color: #ffffff !important;
-    /* Rosewater tone for visibility */
     font-weight: 700 !important;
     text-shadow: 0 0 6px rgba(235, 228, 228, 0.6);
     border: 1px solid #b4befe !important;
-    /* 外枠: Lavender */
-    /* 子要素側の枠を削除して二重化防止 */
 }
 
-/* 子要素に余分な枠を出さない（これが二重化防止） */
+/* 子要素に余分な枠を出さない */
 .active-window-widget * {
     border: none !important;
     background-color: transparent !important;
@@ -193,15 +207,6 @@
 .active-window-widget:hover {
     filter: brightness(1.15);
     border-color: #cdf7a6 !important;
-    /* Mauve系で軽く強調 */
 }
 
-/* 診断用 */
-* {
-    outline: 1px solid red !important;
-}
-
-.clock-widget,
-.clock {
-    outline: 3px solid yellow !important;
-}
+/* 診断用コードは削除済み */
